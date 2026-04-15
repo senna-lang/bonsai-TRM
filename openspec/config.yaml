@@ -1,0 +1,28 @@
+schema: spec-driven
+
+context: |
+  Project: Bonsai-8B + 3-Role Scaffolding on AppWorld
+  Goal: McClendon et al. (2026) の 3 役スキャフォールド手法を Bonsai-8B (1-bit LLM, 1.15GB) に適用し AppWorld ベンチマークで検証
+  Tech stack: Python 3.11+, llama.cpp (CUDA) or MLX (Apple Silicon fallback)
+  Base model: Bonsai-8B (1-bit LLM, 1.15 GB, Qwen3-8B ベース)
+  Benchmark: AppWorld (interactive coding agent benchmark, 168 tasks)
+  Scaffold: Summarizer / Agent / Corrector の 3 役推論時介入
+  Environment: Google Colab Pro (A100/V100) or M2 Mac 24GB (MLX fallback)
+  Output: 評価結果 + Zenn 記事 + GitHub リポジトリ
+  Related: bonsai-bankai (Bankai XOR Adaptation, 環境構築知見あり)
+  Paper repo: https://github.com/Aimpoint-Digital/appworld-agent
+
+rules:
+  specs:
+    - "Phase 0 の実測結果に基づいてスコープを適応的に決定すること"
+    - "ベースラインとスキャフォールドは同一タスクセット・同一評価ハーネスで比較すること"
+    - "失敗モード分析は論文と同じカテゴリ(認証/スキーマ/ループ/推論)で分類すること"
+    - "Bonsai のコンテキスト長制限(6K超で劣化)を考慮し、Summarizer 閾値を 3-4K に設定すること"
+  tasks:
+    - "Phase 0 が完了してから Phase 1 以降に進むこと(Go/No-go 判断あり)"
+    - "チェックポイント機構を実装し、セッション切断時にも途中結果を保持すること"
+    - "各タスクの LLM 入出力ログを保存し、失敗モード分析に使えるようにすること"
+  design:
+    - "論文の公式リポジトリ(Aimpoint-Digital/appworld-agent)を参照実装として活用すること"
+    - "Corrector を先に実装し、Summarizer は後付けで段階的に構築すること"
+    - "Qwen3-8B との直接比較は参考値として扱い、Bonsai 内 Before/After を主軸とすること"
