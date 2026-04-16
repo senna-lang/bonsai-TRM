@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-04-16T05:14:47.139737",
+  "phase": "3-scaffold",
+  "total_tasks": 168,
+  "successes": 25,
+  "success_rate": 0.1488095238095238,
+  "errors": 1,
+  "total_wall_time_minutes": 246.66343073447544,
+  "summarizer_invocations_total": 1705,
+  "corrector_changes_total": 1854,
+  "by_difficulty": {
+    "1": {
+      "total": 57,
+      "success": 8
+    },
+    "2": {
+      "total": 48,
+      "success": 7
+    },
+    "3": {
+      "total": 63,
+      "success": 10
+    }
+  },
+  "error_patterns": {
+    "context_overflow": 1
+  }
+}
