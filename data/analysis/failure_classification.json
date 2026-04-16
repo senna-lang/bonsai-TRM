@@ -1,0 +1,1218 @@
+{
+  "total_tasks": 168,
+  "primary_distribution": {
+    "formatting_code": 10,
+    "api_misuse": 94,
+    "success": 25,
+    "missing_api": 10,
+    "reasoning_planning": 9,
+    "api_params_schema": 3,
+    "context_length": 1,
+    "repetition_loop": 16
+  },
+  "primary_weighted": {
+    "formatting_code": 8.41,
+    "api_misuse": 88.27000000000008,
+    "success": 25.0,
+    "missing_api": 8.78,
+    "reasoning_planning": 7.750000000000002,
+    "api_params_schema": 2.71,
+    "context_length": 1.0,
+    "repetition_loop": 14.450000000000003
+  },
+  "secondary_distribution": {
+    "repetition_loop": 105,
+    "api_misuse": 13,
+    "formatting_code": 11,
+    "reasoning_planning": 7,
+    "missing_api": 4,
+    "api_params_schema": 1
+  },
+  "failure_only_distribution": {
+    "formatting_code": 10,
+    "api_misuse": 94,
+    "missing_api": 10,
+    "reasoning_planning": 9,
+    "api_params_schema": 3,
+    "context_length": 1,
+    "repetition_loop": 16
+  },
+  "classifications": [
+    {
+      "task_id": "3d9a636_1",
+      "primary": "formatting_code",
+      "secondary": "repetition_loop",
+      "confidence": 0.75,
+      "evidence": "Last 3 steps all have empty agent_output and empty observation, agent produced no code block output"
+    },
+    {
+      "task_id": "3d9a636_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent repeatedly tries 'import venmo' and suggests 'pip install venmo' instead of using apis.venmo interface; last 3 steps identical"
+    },
+    {
+      "task_id": "3d9a636_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent uses 'import venmo' / 'venmo.VenmoApi()' instead of apis.* interface; last 3 steps produce same output with same error"
+    },
+    {
+      "task_id": "fd1f8fa_1",
+      "primary": "success",
+      "secondary": null,
+      "confidence": 1.0,
+      "evidence": "task success=true, apis.supervisor.complete_task() called and execution successful"
+    },
+    {
+      "task_id": "fd1f8fa_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent uses 'import requests' and constructs raw HTTP calls to Spotify REST API instead of using apis.spotify interface; last 3 steps identical"
+    },
+    {
+      "task_id": "fd1f8fa_3",
+      "primary": "success",
+      "secondary": null,
+      "confidence": 1.0,
+      "evidence": "task success=true, apis.supervisor.complete_task() called and execution successful"
+    },
+    {
+      "task_id": "325d6ec_1",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent repeatedly uses 'import spotify' and 'spotify.Spotify()' instead of apis.spotify interface; last 3 steps identical"
+    },
+    {
+      "task_id": "325d6ec_2",
+      "primary": "success",
+      "secondary": null,
+      "confidence": 1.0,
+      "evidence": "task success=true, apis.supervisor.complete_task() called and execution successful"
+    },
+    {
+      "task_id": "325d6ec_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent uses 'from spotify import Spotify' instead of apis.spotify interface; last 3 steps are near-identical"
+    },
+    {
+      "task_id": "29a7b7e_1",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.9,
+      "evidence": "Agent uses os.listdir and os.rename (forbidden OS functions) instead of required apis.* file interface; last 3 steps identical"
+    },
+    {
+      "task_id": "29a7b7e_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.92,
+      "evidence": "Agent attempts 'import file_system' as an external module instead of using apis.* interface; last 3 steps identical"
+    },
+    {
+      "task_id": "29a7b7e_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.9,
+      "evidence": "Agent uses 'import shutil' and os.rename (forbidden modules) instead of apis.* interface; last 3 steps identical"
+    },
+    {
+      "task_id": "21abae1_1",
+      "primary": "formatting_code",
+      "secondary": "api_misuse",
+      "confidence": 0.8,
+      "evidence": "Final 3 steps all produce 'ERROR: No code block found in Agent output'; agent stopped generating code blocks after failing with import venmo"
+    },
+    {
+      "task_id": "21abae1_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.93,
+      "evidence": "Agent uses 'from supervisor import Supervisor' treating it as external module instead of calling apis.supervisor directly; last 3 steps identical"
+    },
+    {
+      "task_id": "21abae1_3",
+      "primary": "formatting_code",
+      "secondary": "api_misuse",
+      "confidence": 0.8,
+      "evidence": "Final 3 steps all produce 'ERROR: No code block found in Agent output'; agent reverted to prose-only responses after failing with import venmo"
+    },
+    {
+      "task_id": "634f342_1",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent uses 'from spotipy import Spotify' instead of apis.spotify interface; last 3 steps identical"
+    },
+    {
+      "task_id": "634f342_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent repeatedly uses 'import spotify' and suggests 'pip install spotify-api' instead of using apis.spotify interface; last 3 steps identical"
+    },
+    {
+      "task_id": "634f342_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.97,
+      "evidence": "Agent repeatedly runs `from spotify import Spotify` despite error 'Usage of the following module is not allowed: spotify'; identical code block repeated steps 37-39"
+    },
+    {
+      "task_id": "8749218_1",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.97,
+      "evidence": "Agent repeatedly imports `from supervisor import Supervisor` and uses `requests.post` with raw Spotify API URL; identical output at steps 37-39 despite 'modules not allowed: requests and supervisor'"
+    },
+    {
+      "task_id": "8749218_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.97,
+      "evidence": "Agent repeatedly uses `import requests` and calls raw Spotify API URLs; identical code block at steps 37-39 despite 'module not allowed: requests'"
+    },
+    {
+      "task_id": "8749218_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.97,
+      "evidence": "Agent repeatedly uses `import requests` and `import requests_oauthlib` for Spotify API; identical code at steps 37-39 despite 'modules not allowed: requests and requests_oauthlib'"
+    },
+    {
+      "task_id": "2d9f728_1",
+      "primary": "missing_api",
+      "secondary": "repetition_loop",
+      "confidence": 0.88,
+      "evidence": "Agent calls `api_docs.pay(...)` which is not a valid interface; `NameError: api_docs is not defined` repeated identically at steps 37-39"
+    },
+    {
+      "task_id": "2d9f728_2",
+      "primary": "success",
+      "secondary": null,
+      "confidence": 1.0,
+      "evidence": "success=true; task completed in 2 steps"
+    },
+    {
+      "task_id": "2d9f728_3",
+      "primary": "missing_api",
+      "secondary": "repetition_loop",
+      "confidence": 0.88,
+      "evidence": "Agent calls `api_docs.pay(...)` as if it's an object with a `.pay` method; `NameError: api_docs is not defined` repeated identically at steps 37-39"
+    },
+    {
+      "task_id": "6f4b9a5_1",
+      "primary": "missing_api",
+      "secondary": "repetition_loop",
+      "confidence": 0.88,
+      "evidence": "Agent calls `api_docs.get('api_docs')` as if api_docs is a dict in scope; `NameError: api_docs is not defined` repeated at steps 37-39"
+    },
+    {
+      "task_id": "6f4b9a5_2",
+      "primary": "reasoning_planning",
+      "secondary": "repetition_loop",
+      "confidence": 0.85,
+      "evidence": "Agent constructs a fake hardcoded `simple_note` dict with placeholder songs and calls `.save()` on a list object; `AttributeError: 'list' object has no attribute 'save'` repeated at steps 37-39"
+    },
+    {
+      "task_id": "6f4b9a5_3",
+      "primary": "missing_api",
+      "secondary": "repetition_loop",
+      "confidence": 0.88,
+      "evidence": "Agent iterates `for song in simple_note` without ever fetching the note via APIs; `NameError: simple_note is not defined` repeated at steps 37-39"
+    },
+    {
+      "task_id": "d6ac34d_1",
+      "primary": "missing_api",
+      "secondary": "repetition_loop",
+      "confidence": 0.87,
+      "evidence": "Agent calls `MainUserMunch(...)` which is not a valid AppWorld API; `NameError: MainUserMunch is not defined` repeated at steps 37-39"
+    },
+    {
+      "task_id": "d6ac34d_2",
+      "primary": "success",
+      "secondary": null,
+      "confidence": 1.0,
+      "evidence": "success=true; task completed in 3 steps"
+    },
+    {
+      "task_id": "d6ac34d_3",
+      "primary": "reasoning_planning",
+      "secondary": "repetition_loop",
+      "confidence": 0.85,
+      "evidence": "Agent constructs a fake `api_notes` dict and attempts `.get_note()` on it; `AttributeError: 'dict' object has no attribute 'get_note'` repeated at steps 37-39"
+    },
+    {
+      "task_id": "0d01c76_1",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.97,
+      "evidence": "Agent repeatedly uses `from simple_note import create_note, update_note`; error 'Usage of the following module is not allowed: simple_note' at steps 37-39"
+    },
+    {
+      "task_id": "0d01c76_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent alternates between `from supervisor import MainUserMunch` and `from file_system import list_files`; both blocked as 'module not allowed'"
+    },
+    {
+      "task_id": "0d01c76_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent cycles through `from file_system import`, `from simple_note import`, `from supervisor import`; each blocked as 'module not allowed'"
+    },
+    {
+      "task_id": "ff58e36_1",
+      "primary": "api_misuse",
+      "secondary": "formatting_code",
+      "confidence": 0.9,
+      "evidence": "Agent's earlier steps used `import venmo` (blocked); final 3 steps produce explanatory prose with only a bash `pip install venmo` snippet, triggering 'No code block found in Agent output'"
+    },
+    {
+      "task_id": "ff58e36_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.97,
+      "evidence": "Agent repeatedly executes `import venmo` despite 'Usage of the following module is not allowed: venmo' error, looping identically for steps 37-39"
+    },
+    {
+      "task_id": "ff58e36_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.97,
+      "evidence": "Agent repeatedly executes `import venmo` with pip-install suggestion despite sandbox restriction, identical output steps 37-39"
+    },
+    {
+      "task_id": "d18139b_1",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.93,
+      "evidence": "Agent attempted `import venmo` then fell into repetition loop with 'No code block found' error after failing to produce valid code without banned module"
+    },
+    {
+      "task_id": "d18139b_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.93,
+      "evidence": "Same as d18139b_1: agent stuck on `import venmo` approach, looping identical no-code-block responses at steps 37-39"
+    },
+    {
+      "task_id": "d18139b_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.93,
+      "evidence": "Agent repeatedly suggests `pip install venmo` and `import venmo` despite restriction, producing identical no-code-block output at steps 37-39"
+    },
+    {
+      "task_id": "5a83b05_1",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent alternates between `from supervisor import complete_task` and `from file_system import delete_files`, both disallowed external modules instead of apis.* interface"
+    },
+    {
+      "task_id": "5a83b05_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent uses `from file_system import delete_files` and `from supervisor import get_app` — both disallowed external modules — looping at steps 37-39"
+    },
+    {
+      "task_id": "5a83b05_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent repeatedly imports `file_system` and `supervisor` as external modules instead of using `apis.*` interface, identical outputs at steps 38-39"
+    },
+    {
+      "task_id": "042a9fc_1",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.96,
+      "evidence": "Agent repeatedly executes `import spotipy` despite 'Usage of the following module is not allowed: spotipy' error, alternating with no-code-block outputs"
+    },
+    {
+      "task_id": "042a9fc_2",
+      "primary": "success",
+      "secondary": null,
+      "confidence": 1.0,
+      "evidence": "success: true, task completed in 3 steps"
+    },
+    {
+      "task_id": "042a9fc_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.97,
+      "evidence": "Agent repeatedly executes `import spotipy` with `from spotipy.oauth2 import SpotifyOAuth` despite sandbox restriction, identical output at steps 37-39"
+    },
+    {
+      "task_id": "cef9191_1",
+      "primary": "success",
+      "secondary": null,
+      "confidence": 1.0,
+      "evidence": "success: true, task completed in 4 steps"
+    },
+    {
+      "task_id": "cef9191_2",
+      "primary": "success",
+      "secondary": null,
+      "confidence": 1.0,
+      "evidence": "success: true, task completed in 4 steps"
+    },
+    {
+      "task_id": "cef9191_3",
+      "primary": "reasoning_planning",
+      "secondary": "repetition_loop",
+      "confidence": 0.88,
+      "evidence": "Agent incorrectly calls `supervisor.get_user()` as bare variable (not via `apis.supervisor`) causing NameError; identical incorrect code repeated at steps 37-39"
+    },
+    {
+      "task_id": "3b8fb7a_1",
+      "primary": "api_params_schema",
+      "secondary": "repetition_loop",
+      "confidence": 0.9,
+      "evidence": "Agent assigns `api_docs = 'api_docs'` as a string literal then attempts `api_docs.call_api(api, payment)`, causing AttributeError; identical code repeated steps 37-39"
+    },
+    {
+      "task_id": "3b8fb7a_2",
+      "primary": "api_params_schema",
+      "secondary": "repetition_loop",
+      "confidence": 0.9,
+      "evidence": "Agent assigns `api = 'venmo'` as string literal then calls `api.payments.create(payment)` on it, causing AttributeError 'str has no attribute payments'; identical steps 37-39"
+    },
+    {
+      "task_id": "3b8fb7a_3",
+      "primary": "context_length",
+      "secondary": null,
+      "confidence": 1.0,
+      "evidence": "error field: 'request (16403 tokens) exceeds the available context size (16384 tokens)'"
+    },
+    {
+      "task_id": "afc4005_1",
+      "primary": "repetition_loop",
+      "secondary": "formatting_code",
+      "confidence": 0.92,
+      "evidence": "Last 3 steps identical: agent repeatedly generates `today's_plan = note.get_workout_plan()` causing 'unterminated string literal' syntax error without correction"
+    },
+    {
+      "task_id": "afc4005_2",
+      "primary": "api_misuse",
+      "secondary": "formatting_code",
+      "confidence": 0.88,
+      "evidence": "Agent suggests `pip install simple_note` and treats simple_note as a PyPI package rather than using the required `apis.*` sandboxed interface; no code block in output"
+    },
+    {
+      "task_id": "afc4005_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent cycles through `import supervisor`, `import simple_note`, `import api_docs` — each blocked with 'Usage of the following module is not allowed', never switching to `apis.*`"
+    },
+    {
+      "task_id": "9dabbc9_1",
+      "primary": "api_params_schema",
+      "secondary": "repetition_loop",
+      "confidence": 0.91,
+      "evidence": "Agent calls `apis.supervisor.complete_task(api_response)` with positional argument; TypeError 'takes 0 positional arguments but 1 was given' repeats across all 3 final steps"
+    },
+    {
+      "task_id": "9dabbc9_2",
+      "primary": "formatting_code",
+      "secondary": "repetition_loop",
+      "confidence": 0.9,
+      "evidence": "Agent emits `api_docs = <your_supervisor_api_docs_object>.api_docs` with literal angle-bracket placeholder, causing 'invalid syntax' SyntaxError; same malformed output repeated 3 times"
+    },
+    {
+      "task_id": "9dabbc9_3",
+      "primary": "missing_api",
+      "secondary": "repetition_loop",
+      "confidence": 0.87,
+      "evidence": "Agent calls `api_docs.send_payment_request()` on an undefined name `api_docs`; NameError repeated identically across 3 final steps indicating hallucinated API"
+    },
+    {
+      "task_id": "425a494_1",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.97,
+      "evidence": "`import spotify` blocked with 'Usage of the following module is not allowed: spotify.' repeated identically across all 3 final steps"
+    },
+    {
+      "task_id": "425a494_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.93,
+      "evidence": "Agent uses `urllib` / `http.client` to call https://api.spotify.com directly instead of `apis.*`; blocked with 'Usage of the following module is not allowed: urllib.' repeated 3 times"
+    },
+    {
+      "task_id": "425a494_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent uses `requests.get` to call Spotify REST API directly; blocked with 'Usage of the following module is not allowed: requests.' repeated across all 3 final steps"
+    },
+    {
+      "task_id": "a30375d_1",
+      "primary": "repetition_loop",
+      "secondary": "reasoning_planning",
+      "confidence": 0.88,
+      "evidence": "Agent repeatedly executes `print(random_quote)` producing the same quote output without progressing toward task completion; identical agent_output and observation across all 3 final steps"
+    },
+    {
+      "task_id": "a30375d_2",
+      "primary": "missing_api",
+      "secondary": "reasoning_planning",
+      "confidence": 0.85,
+      "evidence": "Agent calls `api_docs.get_inspirational_quote(random_note_app)` on `api_docs` which is a dict object; AttributeError 'dict object has no attribute get_inspirational_quote' — hallucinated method"
+    },
+    {
+      "task_id": "a30375d_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "`from simple_note import SimpleNote` blocked with 'Usage of the following module is not allowed: simple_note.' repeated identically across all 3 final steps"
+    },
+    {
+      "task_id": "09b0ee6_1",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "`import api_docs` blocked with 'Usage of the following modules is not allowed: api_docs, spotify and supervisor.' repeated identically across all 3 final steps"
+    },
+    {
+      "task_id": "09b0ee6_2",
+      "primary": "formatting_code",
+      "secondary": "api_misuse",
+      "confidence": 0.82,
+      "evidence": "Agent output contains a code block with `import supervisor` but scaffold reports 'ERROR: No code block found in Agent output' — code block truncated/malformed; repeated 3 times"
+    },
+    {
+      "task_id": "09b0ee6_3",
+      "primary": "reasoning_planning",
+      "secondary": "missing_api",
+      "confidence": 0.85,
+      "evidence": "Agent returns hardcoded fake artist data (Beyoncé, Taylor Swift, Ed Sheeran) as a placeholder without making any real Spotify API call via `apis.*`, then loops between printing and getting 'No code block' error"
+    },
+    {
+      "task_id": "d194965_1",
+      "primary": "missing_api",
+      "secondary": "repetition_loop",
+      "confidence": 0.87,
+      "evidence": "Agent calls `simple_note.load_notes()` and `simple_note.save_playlist()` but `SimpleNote` is never imported/initialized; NameError 'SimpleNote is not defined' repeated across all 3 final steps"
+    },
+    {
+      "task_id": "d194965_2",
+      "primary": "missing_api",
+      "secondary": "repetition_loop",
+      "confidence": 0.88,
+      "evidence": "Agent calls `api_docs.get_songs_from_simple_note()` and `api_docs.create_playlist_on_spotify()` but `api_docs` is undefined; NameError repeated identically across all 3 final steps"
+    },
+    {
+      "task_id": "d194965_3",
+      "primary": "repetition_loop",
+      "secondary": "api_misuse",
+      "confidence": 0.88,
+      "evidence": "Steps 37-39 are identical: agent calls `simple_note = SimpleNote()` (NameError) in a loop without any change between steps"
+    },
+    {
+      "task_id": "7847649_1",
+      "primary": "repetition_loop",
+      "secondary": "missing_api",
+      "confidence": 0.87,
+      "evidence": "Steps 37-39 identical: `api_docs = api_docs.get_api('api_docs')` causing NameError on loop; fabricated `get_api` method does not exist"
+    },
+    {
+      "task_id": "7847649_2",
+      "primary": "reasoning_planning",
+      "secondary": "missing_api",
+      "confidence": 0.8,
+      "evidence": "Agent oscillates between `supervisor.get_api_docs()` and `api_docs.get_supervisor()`, neither defined, with circular logic across steps 37-39"
+    },
+    {
+      "task_id": "7847649_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Steps 37-39 repeatedly try `from simple_note import SimpleNote`; sandbox rejects with 'Usage of the following module is not allowed: simple_note'"
+    },
+    {
+      "task_id": "552869a_1",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.97,
+      "evidence": "Steps 37-39 repeatedly try `from venmo import Venmo`; sandbox rejects with 'Usage of the following module is not allowed: venmo'"
+    },
+    {
+      "task_id": "552869a_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.93,
+      "evidence": "Step 39 tries `import venmo`; prior steps explain venmo install instructions showing agent believes venmo is a real pip package rather than using `apis.*`"
+    },
+    {
+      "task_id": "552869a_3",
+      "primary": "api_misuse",
+      "secondary": "formatting_code",
+      "confidence": 0.9,
+      "evidence": "All three last steps produce no valid code block (ERROR: No code block), agent only explains how to `pip install venmo` — fundamental misuse of sandbox environment"
+    },
+    {
+      "task_id": "652485c_1",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.88,
+      "evidence": "Steps 37-39 identical: agent uses `import os`, initializes `Supervisor()` directly, and calls `builtins.open` — all disallowed; sandbox blocks `builtins.open`"
+    },
+    {
+      "task_id": "652485c_2",
+      "primary": "api_misuse",
+      "secondary": "reasoning_planning",
+      "confidence": 0.95,
+      "evidence": "Agent tries `from amazon import Amazon`, then `from venv import Venv`, then `from simple_note import SimpleNote` — cycling through disallowed external modules instead of using `apis.*`"
+    },
+    {
+      "task_id": "652485c_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.97,
+      "evidence": "Steps 37-39 identical: `from spotipy import Spotify` with client_id placeholders; sandbox rejects 'Usage of the following module is not allowed: spotipy'"
+    },
+    {
+      "task_id": "ccf4b82_1",
+      "primary": "api_misuse",
+      "secondary": "formatting_code",
+      "confidence": 0.9,
+      "evidence": "Steps 37-39 produce no code block (ERROR: No code block); agent only provides `pip install venmo` instructions, failing to use `apis.*` interface"
+    },
+    {
+      "task_id": "ccf4b82_2",
+      "primary": "api_misuse",
+      "secondary": "formatting_code",
+      "confidence": 0.9,
+      "evidence": "Steps 37-39 produce no code block (ERROR: No code block); agent suggests `pip install venmo` and access token verification instead of using `apis.*`"
+    },
+    {
+      "task_id": "ccf4b82_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.92,
+      "evidence": "Step 38 uses `import venmo` directly; other steps produce no code block; agent treats venmo as an installable pip package rather than using `apis.*`"
+    },
+    {
+      "task_id": "522e5e5_1",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.93,
+      "evidence": "Step 38 uses `import venmo`; steps 37/39 provide `pip install venmo` instructions with no code block — persistent misunderstanding of sandboxed `apis.*` interface"
+    },
+    {
+      "task_id": "522e5e5_2",
+      "primary": "reasoning_planning",
+      "secondary": "formatting_code",
+      "confidence": 0.82,
+      "evidence": "Step 38 outputs only a comment placeholder `# This is a placeholder for the code block`; agent has no plan and produces no meaningful action across all three steps"
+    },
+    {
+      "task_id": "522e5e5_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent cycles through `import supervisor`, `import venmo`, then `api_docs.Venmo(...)` — repeatedly attempting disallowed external modules instead of `apis.*`"
+    },
+    {
+      "task_id": "0de03ea_1",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Steps 37-39 identical: agent uses `import subprocess` with curl to real Spotify URL instead of `apis.*`; sandbox rejects 'Usage of the following module is not allowed: requests'"
+    },
+    {
+      "task_id": "0de03ea_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent repeatedly imports `spotipy` module and uses `os.system('spotify ...')` instead of `apis.*` interface; identical output repeated at steps 37-39"
+    },
+    {
+      "task_id": "0de03ea_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.92,
+      "evidence": "Agent repeatedly uses `import subprocess` to call `spotify` CLI instead of `apis.*` interface; identical code block repeated at steps 37-39 with same 'subprocess not allowed' error"
+    },
+    {
+      "task_id": "2c544f9_1",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent repeatedly attempts `import venmo` and suggests `pip install venmo` instead of using `apis.*` interface; identical output repeated at steps 37-39"
+    },
+    {
+      "task_id": "2c544f9_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.9,
+      "evidence": "Agent uses `import venmo` and `from supervisor import Supervisor` instead of `apis.*` interface; loops with 'supervisor and venmo not allowed' error at steps 37 and 39"
+    },
+    {
+      "task_id": "2c544f9_3",
+      "primary": "formatting_code",
+      "secondary": "api_misuse",
+      "confidence": 0.85,
+      "evidence": "Agent produces prose about venmo module restrictions with no executable code block; 'ERROR: No code block found in Agent output' repeated at steps 37-39"
+    },
+    {
+      "task_id": "270f1ff_1",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent repeatedly uses `from supervisor import Supervisor` instead of `apis.*` interface; identical code block repeated at steps 37-39 with 'supervisor not allowed' error"
+    },
+    {
+      "task_id": "270f1ff_2",
+      "primary": "success",
+      "secondary": null,
+      "confidence": 1.0,
+      "evidence": "success=true; task completed in 2 steps with 'Execution successful.' at step 1"
+    },
+    {
+      "task_id": "270f1ff_3",
+      "primary": "success",
+      "secondary": null,
+      "confidence": 1.0,
+      "evidence": "success=true; task completed in 2 steps with successful Venmo and phone message simulation"
+    },
+    {
+      "task_id": "024c982_1",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent repeatedly uses `from supervisor import Supervisor` and `Venmo()` directly instead of `apis.*` interface; identical code repeated at steps 37-39"
+    },
+    {
+      "task_id": "024c982_2",
+      "primary": "formatting_code",
+      "secondary": "api_misuse",
+      "confidence": 0.88,
+      "evidence": "Agent outputs prose about venmo installation with no code block; 'ERROR: No code block found in Agent output' repeated at steps 37-39; underlying issue is api_misuse"
+    },
+    {
+      "task_id": "024c982_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent repeatedly imports `venmo` and `from supervisor import Supervisor` instead of `apis.*` interface; identical block repeated at steps 37-39 with 'supervisor and venmo not allowed' error"
+    },
+    {
+      "task_id": "9ef798c_1",
+      "primary": "success",
+      "secondary": null,
+      "confidence": 1.0,
+      "evidence": "success=true; task completed in 3 steps with final 'Execution successful.' at step 2"
+    },
+    {
+      "task_id": "9ef798c_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.93,
+      "evidence": "Agent repeatedly attempts `import venmo` and suggests Venmo Developer Portal / pip install instead of `apis.*`; identical output repeated at steps 37-39 with 'venmo not allowed' error"
+    },
+    {
+      "task_id": "9ef798c_3",
+      "primary": "success",
+      "secondary": null,
+      "confidence": 1.0,
+      "evidence": "success=true; task completed in 3 steps with final 'Execution successful.' at step 2"
+    },
+    {
+      "task_id": "b9c5c9a_1",
+      "primary": "success",
+      "secondary": null,
+      "confidence": 1.0,
+      "evidence": "success=true; task completed in 9 steps with 'Execution successful.' at step 8"
+    },
+    {
+      "task_id": "b9c5c9a_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.92,
+      "evidence": "Agent repeatedly uses `builtins.open`, `csv.reader`, `csv.writer` instead of `apis.*` file system interface; identical code repeated at steps 37-39 with 'builtins.open not allowed' error"
+    },
+    {
+      "task_id": "b9c5c9a_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.92,
+      "evidence": "Agent repeatedly uses `builtins.open` and `csv.writer` instead of `apis.*` file system interface; identical code repeated at steps 37-39 with 'builtins.open not allowed' error"
+    },
+    {
+      "task_id": "90adc3f_1",
+      "primary": "repetition_loop",
+      "secondary": "reasoning_planning",
+      "confidence": 0.95,
+      "evidence": "Identical code block with 'payment_requests' NameError repeated verbatim at steps 37, 38, 39 with no change"
+    },
+    {
+      "task_id": "90adc3f_2",
+      "primary": "repetition_loop",
+      "secondary": "api_misuse",
+      "confidence": 0.92,
+      "evidence": "Agent repeatedly tries `api = 'api_docs'.get_api('venmo')` treating a string literal as an object, same code/error at steps 37-39"
+    },
+    {
+      "task_id": "90adc3f_3",
+      "primary": "repetition_loop",
+      "secondary": "api_misuse",
+      "confidence": 0.92,
+      "evidence": "Agent repeatedly sets `api = 'venmo'` then calls `api.get_api()` on a string, same AttributeError repeated at steps 37-39"
+    },
+    {
+      "task_id": "c77c005_1",
+      "primary": "repetition_loop",
+      "secondary": "missing_api",
+      "confidence": 0.93,
+      "evidence": "Agent repeatedly calls `apis.supervisor.get_task()` which does not exist, same code and 'No API named get_task' error at steps 37-39"
+    },
+    {
+      "task_id": "c77c005_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent suggests `pip install venmo` treating Venmo as an external PyPI package; error 'Usage of the following module is not allowed: venmo' repeated at steps 37-39"
+    },
+    {
+      "task_id": "c77c005_3",
+      "primary": "api_misuse",
+      "secondary": "formatting_code",
+      "confidence": 0.9,
+      "evidence": "Agent output suggests `pip install venmo` and `pip uninstall venmo` indicating external module misunderstanding; no valid code block produced repeatedly"
+    },
+    {
+      "task_id": "f323bae_1",
+      "primary": "success",
+      "secondary": null,
+      "confidence": 1.0,
+      "evidence": "success=true"
+    },
+    {
+      "task_id": "f323bae_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent uses `import simple_note` and `import apis` as Python modules; error 'Usage of the following module is not allowed: apis' repeated at steps 37-39"
+    },
+    {
+      "task_id": "f323bae_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.93,
+      "evidence": "Agent uses raw `builtins.open` and `csv.writer` with hardcoded sample data instead of AppWorld APIs; error 'Usage of the following functions is not allowed' repeated at steps 37-39"
+    },
+    {
+      "task_id": "13547f5_1",
+      "primary": "formatting_code",
+      "secondary": "repetition_loop",
+      "confidence": 0.88,
+      "evidence": "Agent produces only explanation text with no code block repeatedly; 'ERROR: No code block found in Agent output' at steps 37-39"
+    },
+    {
+      "task_id": "13547f5_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent uses `from mainusermunch import MainUserMunch` and `from supervisor import complete_task` as external modules; error 'not allowed: mainusermunch and supervisor' repeated at steps 37-39"
+    },
+    {
+      "task_id": "13547f5_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.93,
+      "evidence": "Agent repeatedly imports `from mainusermunch import MainUserMunch` as an external module; error 'not allowed: mainusermunch' at steps 37 and 39"
+    },
+    {
+      "task_id": "1150ed6_1",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.98,
+      "evidence": "Agent uses `import spotify` as external Python module; error 'Usage of the following module is not allowed: spotify' repeated at steps 37-39"
+    },
+    {
+      "task_id": "1150ed6_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.98,
+      "evidence": "Agent uses `import spotify` as external Python module; error 'Usage of the following module is not allowed: spotify' repeated at steps 37-39"
+    },
+    {
+      "task_id": "1150ed6_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.97,
+      "evidence": "Agent uses `import spotipy` with SpotifyOAuth external credentials pattern; error 'not allowed: spotipy' repeated at steps 37-39"
+    },
+    {
+      "task_id": "31dc501_1",
+      "primary": "success",
+      "secondary": null,
+      "confidence": 1.0,
+      "evidence": "success=true"
+    },
+    {
+      "task_id": "31dc501_2",
+      "primary": "repetition_loop",
+      "secondary": "api_params_schema",
+      "confidence": 0.9,
+      "evidence": "Scaffold keeps executing old code `apis.supervisor.complete_task('set_weekend_...')` with a positional argument causing TypeError, same error repeated at steps 37-39 despite agent outputting corrected no-arg version"
+    },
+    {
+      "task_id": "31dc501_3",
+      "primary": "success",
+      "secondary": null,
+      "confidence": 1.0,
+      "evidence": "success=true; task completed in 1 step with apis.supervisor.complete_task()"
+    },
+    {
+      "task_id": "59fae45_1",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.92,
+      "evidence": "Agent repeatedly uses 'import supervisor' and 'import api_docs' / 'import spotify' — disallowed external modules — across last 3 steps with same error"
+    },
+    {
+      "task_id": "59fae45_2",
+      "primary": "repetition_loop",
+      "secondary": "api_misuse",
+      "confidence": 0.88,
+      "evidence": "Identical code calling 'supervisor.spotify.get_playlist_items()' with NameError repeated verbatim across steps 37-39"
+    },
+    {
+      "task_id": "59fae45_3",
+      "primary": "success",
+      "secondary": null,
+      "confidence": 1.0,
+      "evidence": "success=true; completed in 2 steps despite initial 'import requests' error"
+    },
+    {
+      "task_id": "b6d1104_1",
+      "primary": "repetition_loop",
+      "secondary": "api_misuse",
+      "confidence": 0.9,
+      "evidence": "Identical code block constructing dict placeholders for simple_note/api_docs repeated verbatim at steps 37-39 with same AttributeError"
+    },
+    {
+      "task_id": "b6d1104_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.93,
+      "evidence": "Agent repeatedly issues 'from simple_note import SimpleNote' — a disallowed external module — identical across steps 37-39"
+    },
+    {
+      "task_id": "b6d1104_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.93,
+      "evidence": "Agent repeatedly imports 'from simple_note import SimpleNote' and 'from supervisor import Supervisor' — disallowed modules — identically across steps 37-39"
+    },
+    {
+      "task_id": "f861c32_1",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.93,
+      "evidence": "Agent repeatedly issues 'from venmo import Venmo; from supervisor import Supervisor' — disallowed external modules — identically across steps 37-39"
+    },
+    {
+      "task_id": "f861c32_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.93,
+      "evidence": "Agent repeatedly issues 'import venmo; from venmo import Venmo' — disallowed module — identically across steps 37-39"
+    },
+    {
+      "task_id": "f861c32_3",
+      "primary": "api_misuse",
+      "secondary": "formatting_code",
+      "confidence": 0.88,
+      "evidence": "Agent alternates between 'import venmo' (blocked) and no-code-block output; root cause is persistent misuse of external venmo module"
+    },
+    {
+      "task_id": "0a9d82a_1",
+      "primary": "api_misuse",
+      "secondary": null,
+      "confidence": 0.95,
+      "evidence": "Agent tries 'import amazon', then 'import phone', then 'import venv' — all disallowed external modules — in final 3 steps"
+    },
+    {
+      "task_id": "0a9d82a_2",
+      "primary": "repetition_loop",
+      "secondary": "api_misuse",
+      "confidence": 0.9,
+      "evidence": "Identical code block calling 'api_docs.get_habit_logs()' via undeclared 'supervisor' object repeated verbatim at steps 37-39 with same NameError"
+    },
+    {
+      "task_id": "0a9d82a_3",
+      "primary": "repetition_loop",
+      "secondary": "api_misuse",
+      "confidence": 0.9,
+      "evidence": "Identical code block calling 'api_docs.get()' via undeclared 'supervisor' object repeated verbatim at steps 37-39 with same NameError"
+    },
+    {
+      "task_id": "166f4ff_1",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.9,
+      "evidence": "Agent stuck after 'import venmo' blocked; identical no-code-block explanatory text repeated at steps 37-39 suggesting pip install venmo"
+    },
+    {
+      "task_id": "166f4ff_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.9,
+      "evidence": "Agent stuck after 'import venmo' blocked; near-identical no-code-block explanatory text repeated at steps 37-39 suggesting pip install venmo"
+    },
+    {
+      "task_id": "166f4ff_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.9,
+      "evidence": "Agent repeatedly uses 'import venmo' (blocked) and alternates with no-code-block suggestions; same venmo module misuse throughout"
+    },
+    {
+      "task_id": "9016950_1",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.92,
+      "evidence": "Agent alternates between 'import supervisor' and 'import venmo' — both disallowed external modules — across steps 37-39 with same error"
+    },
+    {
+      "task_id": "9016950_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.97,
+      "evidence": "Agent repeatedly uses 'import venmo' and 'from supervisor import MainUserMunch' — disallowed modules — and loops identically for last 3 turns with same error: 'Usage of the following modules is not allowed: supervisor and venmo.'"
+    },
+    {
+      "task_id": "9016950_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.97,
+      "evidence": "Agent repeatedly uses 'import venmo' and 'from supervisor import' — disallowed modules — identical output for last 3 turns with same error: 'Usage of the following modules is not allowed: supervisor and venmo.'"
+    },
+    {
+      "task_id": "dac78d9_1",
+      "primary": "reasoning_planning",
+      "secondary": "repetition_loop",
+      "confidence": 0.9,
+      "evidence": "Agent computes days since Jan 1 as a proxy for 'number of Venmo friends' — a complete reasoning failure — never calls any Venmo API, loops identically for 3 turns printing 'You have made 137 Venmo friends.'"
+    },
+    {
+      "task_id": "dac78d9_2",
+      "primary": "reasoning_planning",
+      "secondary": "repetition_loop",
+      "confidence": 0.9,
+      "evidence": "Agent uses hardcoded placeholder value 120 instead of calling Venmo API to count friends, with comment 'In a real scenario, you would use the venmo API'; loops identically 3 turns."
+    },
+    {
+      "task_id": "dac78d9_3",
+      "primary": "reasoning_planning",
+      "secondary": "repetition_loop",
+      "confidence": 0.9,
+      "evidence": "Agent computes days since March 1 as friend count ('You have made 78 Venmo friends since start of March') — never calls any API — loops identically for 3 turns."
+    },
+    {
+      "task_id": "f3f60f0_1",
+      "primary": "success",
+      "secondary": null,
+      "confidence": 1.0,
+      "evidence": "success=true"
+    },
+    {
+      "task_id": "f3f60f0_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent uses 'import supervisor' to build Spotify OAuth flow — disallowed module — loops identically 3 turns with error 'Usage of the following modules is not allowed: requests and supervisor.'"
+    },
+    {
+      "task_id": "f3f60f0_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent uses 'import requests_oauthlib' and 'import requests' to call Spotify HTTP endpoints — disallowed modules — loops identically 3 turns with error 'Usage of the following modules is not allowed: requests and requests_oauthlib.'"
+    },
+    {
+      "task_id": "ffe6d5e_1",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.97,
+      "evidence": "Agent uses 'from simple_note import SimpleNote' — disallowed module — loops identically 3 turns with error 'Usage of the following module is not allowed: simple_note.'"
+    },
+    {
+      "task_id": "ffe6d5e_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.97,
+      "evidence": "Agent uses 'from simple_note import SimpleNote' — disallowed module — loops identically 3 turns with error 'Usage of the following module is not allowed: simple_note.'"
+    },
+    {
+      "task_id": "ffe6d5e_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.97,
+      "evidence": "Agent uses 'from simple_note import SimpleNote' — disallowed module — loops identically 3 turns with error 'Usage of the following module is not allowed: simple_note.'"
+    },
+    {
+      "task_id": "8ce6779_1",
+      "primary": "api_misuse",
+      "secondary": "formatting_code",
+      "confidence": 0.88,
+      "evidence": "Agent alternates between 'import todoist' (disallowed) and plain-text responses with no code block causing 'ERROR: No code block found in Agent output'; primary failure is importing todoist instead of using apis.*."
+    },
+    {
+      "task_id": "8ce6779_2",
+      "primary": "formatting_code",
+      "secondary": "api_misuse",
+      "confidence": 0.85,
+      "evidence": "All 3 visible last turns produce 'ERROR: No code block found in Agent output' — agent outputs plain text troubleshooting advice instead of a code block; underlying trigger was api_misuse (todoist) earlier in trajectory."
+    },
+    {
+      "task_id": "8ce6779_3",
+      "primary": "api_misuse",
+      "secondary": "formatting_code",
+      "confidence": 0.88,
+      "evidence": "Agent alternates between 'import todoist' (disallowed, step 38) and plain text with no code block (steps 37, 39); primary failure is importing todoist module instead of using apis.*."
+    },
+    {
+      "task_id": "83a7951_1",
+      "primary": "success",
+      "secondary": null,
+      "confidence": 1.0,
+      "evidence": "success=true"
+    },
+    {
+      "task_id": "83a7951_2",
+      "primary": "success",
+      "secondary": null,
+      "confidence": 1.0,
+      "evidence": "success=true"
+    },
+    {
+      "task_id": "83a7951_3",
+      "primary": "missing_api",
+      "secondary": "repetition_loop",
+      "confidence": 0.92,
+      "evidence": "Agent calls 'apis[splitwise].payment.create()' but gets 'No API named payment found in the splitwise app' — wrong API name — loops identically for last 3 turns."
+    },
+    {
+      "task_id": "3aa1a22_1",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent repeatedly tries `import splitwise` getting 'Usage of the following module is not allowed: splitwise'; last 3 steps show same pattern"
+    },
+    {
+      "task_id": "3aa1a22_2",
+      "primary": "success",
+      "secondary": null,
+      "confidence": 1.0,
+      "evidence": "task success=true"
+    },
+    {
+      "task_id": "3aa1a22_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Agent keeps trying `import splitwise` in steps 38-39; observation: 'Usage of the following module is not allowed: splitwise'"
+    },
+    {
+      "task_id": "32616b5_1",
+      "primary": "repetition_loop",
+      "secondary": "reasoning_planning",
+      "confidence": 0.9,
+      "evidence": "Steps 37-39 all produce identical code creating a fake `api_docs` dict with lambdas instead of using real APIs; no progress made"
+    },
+    {
+      "task_id": "32616b5_2",
+      "primary": "repetition_loop",
+      "secondary": "reasoning_planning",
+      "confidence": 0.88,
+      "evidence": "Steps 37 and 39 are identical (`supervisor.get('api_docs')` NameError), steps alternate between two broken code variants with no recovery"
+    },
+    {
+      "task_id": "32616b5_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Steps 37-39 all identical: `from splitwise import api_docs` getting 'Usage of the following module is not allowed: splitwise'"
+    },
+    {
+      "task_id": "986aa4e_1",
+      "primary": "repetition_loop",
+      "secondary": "reasoning_planning",
+      "confidence": 0.92,
+      "evidence": "Steps 37-39 are identical: agent creates fake `api_docs={'spotify':{'playlist_api':'your_api_key_here'}}` dict and calls `.update_playlist()` on a string, same AttributeError each time"
+    },
+    {
+      "task_id": "986aa4e_2",
+      "primary": "success",
+      "secondary": null,
+      "confidence": 1.0,
+      "evidence": "task success=true"
+    },
+    {
+      "task_id": "986aa4e_3",
+      "primary": "success",
+      "secondary": null,
+      "confidence": 1.0,
+      "evidence": "task success=true"
+    },
+    {
+      "task_id": "6b6ca61_1",
+      "primary": "success",
+      "secondary": null,
+      "confidence": 1.0,
+      "evidence": "task success=true"
+    },
+    {
+      "task_id": "6b6ca61_2",
+      "primary": "success",
+      "secondary": null,
+      "confidence": 1.0,
+      "evidence": "task success=true"
+    },
+    {
+      "task_id": "6b6ca61_3",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Steps 37-39 all try `from supervisor import Supervisor` getting 'Usage of the following module is not allowed: supervisor' each time"
+    },
+    {
+      "task_id": "bde252e_1",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.95,
+      "evidence": "Steps 37-39 all try `from supervisor import Supervisor` getting 'Usage of the following module is not allowed: supervisor'; 33 summarizer_invocations indicate prolonged failure"
+    },
+    {
+      "task_id": "bde252e_2",
+      "primary": "api_misuse",
+      "secondary": "repetition_loop",
+      "confidence": 0.9,
+      "evidence": "Step 38 tries `from supervisor import Supervisor` getting blocked; steps 37 and 39 produce no code block with identical pip-install suggestion text"
+    },
+    {
+      "task_id": "bde252e_3",
+      "primary": "formatting_code",
+      "secondary": "repetition_loop",
+      "confidence": 0.88,
+      "evidence": "Steps 37-39 all produce 'ERROR: No code block found in Agent output'; agent outputs only pip-install advice text without any executable code block"
+    }
+  ]
+}

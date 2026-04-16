@@ -1,0 +1,42 @@
+{
+  "total_tasks": 168,
+  "successes": 25,
+  "success_rate": 0.1488095238095238,
+  "errors": 1,
+  "total_turns": 5769,
+  "summarizer_invocations": 1705,
+  "summarizer_invocation_rate": 0.29554515513953894,
+  "corrector_changes": 1854,
+  "corrector_change_rate": 0.3213728549141966,
+  "failure_modes": {
+    "repetition_loop": 25,
+    "formatting_code": 108,
+    "success": 25,
+    "other": 9,
+    "context_length": 1
+  },
+  "summarizer_distribution": {
+    "6-10": 28,
+    "21+": 33,
+    "0": 26,
+    "11-20": 15,
+    "1-5": 66
+  },
+  "success_stats": {
+    "steps_min": 1,
+    "steps_max": 12,
+    "steps_mean": 3.32,
+    "time_min": 1.1916868686676025,
+    "time_max": 30.125177145004272,
+    "time_mean": 6.844821195602417
+  },
+  "paper_comparison": {
+    "bonsai_1bit_baseline": 0.0,
+    "bonsai_1bit_scaffold": 14.9,
+    "qwen3_fp16_baseline": 5.4,
+    "qwen3_fp16_scaffold": 8.9,
+    "qwen3_awq_baseline": 3.0,
+    "qwen3_awq_scaffold": 5.9,
+    "deepseek_33b_baseline": 7.1
+  }
+}
